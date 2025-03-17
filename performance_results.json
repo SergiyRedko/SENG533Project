@@ -4,43 +4,88 @@
       "deepseek-r1": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: Say 'Hi'. Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:53:58.550157Z' done=True done_reason='stop' total_duration=7932199200 load_duration=2897194300 prompt_eval_count=12 prompt_eval_duration=243000000 eval_count=42 eval_duration=4790000000 response='<think>\\nOkay, the user just said \"Say \\'Hi\\'.\" They want a response.\\n\\nI should keep it short as they requested.\\n\\nA simple \"Hello!\" would be appropriate.\\n</think>\\n\\nHello!' context=[151644, 45764, 364, 13048, 4427, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 32313, 11, 279, 1196, 1101, 1053, 330, 45764, 364, 13048, 6, 1189, 2379, 1366, 264, 2033, 382, 40, 1265, 2506, 432, 2805, 438, 807, 11223, 382, 32, 4285, 330, 9707, 8958, 1035, 387, 8311, 624, 151649, 271, 9707, 0]"
+          "response": "<think>\nOkay, the user just said \"Say 'Hi'.\" They probably want me to respond with a greeting.\n\nI should keep my answer short as they requested.\n\nMaybe something friendly like \"Hello! How can I assist you today?\" would work well.\n\nThat's concise and opens the conversation for them to continue.\n</think>\n\nHello! How can I assist you today?",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 8.9827036,
+          "eval_duration": 0.003,
+          "load_duration": 21500200
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: What is your name? Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:54:08.2527255Z' done=True done_reason='stop' total_duration=9698324600 load_duration=20169800 prompt_eval_count=13 prompt_eval_duration=36000000 eval_count=83 eval_duration=9641000000 response=\"<think>\\nGreetings! I'm DeepSeek-R1, an artificial intelligence assistant created by DeepSeek. I'm at your service and would be delighted to assist you with any inquiries or tasks you may have.\\n</think>\\n\\nGreetings! I'm DeepSeek-R1, an artificial intelligence assistant created by DeepSeek. I'm at your service and would be delighted to assist you with any inquiries or tasks you may have.\" context=[151644, 3838, 374, 697, 829, 30, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 91786, 0, 358, 2776, 18183, 39350, 10911, 16, 11, 458, 20443, 11229, 17847, 3465, 553, 18183, 39350, 13, 358, 2776, 518, 697, 2473, 323, 1035, 387, 33972, 311, 7789, 498, 448, 894, 43883, 476, 9079, 498, 1231, 614, 624, 151649, 271, 91786, 0, 358, 2776, 18183, 39350, 10911, 16, 11, 458, 20443, 11229, 17847, 3465, 553, 18183, 39350, 13, 358, 2776, 518, 697, 2473, 323, 1035, 387, 33972, 311, 7789, 498, 448, 894, 43883, 476, 9079, 498, 1231, 614, 13]"
+          "response": "<think>\nAlright, someone just asked me what my name is and to keep the answer short. Let's see how I should respond.\n\nFirst off, it's a straightforward question. They want the brief version without any extra details. So, I need to be concise yet clear.\n\nI know my name is \"DeepSeek-R1\". That\u2019s my unique identifier in this system. It includes part of my model and an index number for clarity.\n\nSince they asked for just the name, I don't need to add anything else. Keeping it simple like that should meet their request perfectly.\n</think>\n\nMy name is DeepSeek-R1.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 14.9768107,
+          "eval_duration": 0.035,
+          "load_duration": 20035200
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: What is 29 * 5.5? Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:54:38.7516452Z' done=True done_reason='stop' total_duration=30495580700 load_duration=22237000 prompt_eval_count=19 prompt_eval_duration=35000000 eval_count=261 eval_duration=30437000000 response=\"<think>\\nFirst, I'll break down the multiplication to simplify the calculation.\\n\\nI know that multiplying by 10 and then dividing by 2 will help me achieve half of 10 times a number, which is essentially multiplying by 5. So, I'll calculate 29 multiplied by 10 first.\\n\\nNext, I'll divide that result by 2 to find half of it.\\n\\nFinally, I'll add the two results together to get the final answer.\\n</think>\\n\\nTo find \\\\(29 \\\\times 5.5\\\\), follow these steps:\\n\\n1. **Break down the multiplication:**\\n   \\\\[\\n   29 \\\\times 5.5 = 29 \\\\times \\\\left(5 + 0.5\\\\right)\\n   \\\\]\\n   \\n2. **Multiply separately:**\\n   \\\\[\\n   29 \\\\times 5 = 145\\n   \\\\]\\n   \\\\[\\n   29 \\\\times 0.5 = 14.5\\n   \\\\]\\n   \\n3. **Add the results together:**\\n   \\\\[\\n   145 + 14.5 = 159.5\\n   \\\\]\\n\\n**Final Answer:**  \\n\\\\(\\\\boxed{159.5}\\\\)\" context=[151644, 3838, 374, 220, 17, 24, 353, 220, 20, 13, 20, 30, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 5338, 11, 358, 3278, 1438, 1495, 279, 46444, 311, 39721, 279, 21937, 382, 40, 1414, 429, 84192, 553, 220, 16, 15, 323, 1221, 49702, 553, 220, 17, 686, 1492, 752, 11075, 4279, 315, 220, 16, 15, 3039, 264, 1372, 11, 892, 374, 15791, 84192, 553, 220, 20, 13, 2055, 11, 358, 3278, 11047, 220, 17, 24, 54916, 553, 220, 16, 15, 1156, 382, 5847, 11, 358, 3278, 21749, 429, 1102, 553, 220, 17, 311, 1477, 4279, 315, 432, 382, 23949, 11, 358, 3278, 912, 279, 1378, 3059, 3786, 311, 633, 279, 1590, 4226, 624, 151649, 271, 1249, 1477, 17767, 17, 24, 1124, 15136, 220, 20, 13, 20, 59, 701, 1795, 1493, 7354, 1447, 16, 13, 3070, 22524, 1495, 279, 46444, 25, 1019, 256, 1124, 9640, 256, 220, 17, 24, 1124, 15136, 220, 20, 13, 20, 284, 220, 17, 24, 1124, 15136, 1124, 2359, 7, 20, 488, 220, 15, 13, 20, 59, 1291, 340, 256, 1124, 921, 5872, 17, 13, 3070, 95155, 25156, 25, 1019, 256, 1124, 9640, 256, 220, 17, 24, 1124, 15136, 220, 20, 284, 220, 16, 19, 20, 198, 256, 1124, 921, 256, 1124, 9640, 256, 220, 17, 24, 1124, 15136, 220, 15, 13, 20, 284, 220, 16, 19, 13, 20, 198, 256, 1124, 921, 5872, 18, 13, 3070, 2212, 279, 3059, 3786, 25, 1019, 256, 1124, 9640, 256, 220, 16, 19, 20, 488, 220, 16, 19, 13, 20, 284, 220, 16, 20, 24, 13, 20, 198, 256, 1124, 2533, 334, 19357, 21806, 66963, 2303, 59, 11520, 79075, 90, 16, 20, 24, 13, 20, 11035, 8]"
+          "response": "<think>\nI need to calculate the product of 29 and 5.5.\n\nFirst, I'll break down 5.5 into a fraction or an easier form. 5.5 can be written as 11/2.\n\nNext, I'll multiply 29 by 11. To do this efficiently:\n- Multiply 29 by 10 to get 290.\n- Then add another 29 to reach 319.\n\nFinally, since 11/2 is the same as dividing by 2, I'll divide 319 by 2 to obtain the final result of 159.5.\n</think>\n\nSure! Let's break down the multiplication step-by-step:\n\n\\[\n29 \\times 5.5 = 29 \\times \\left(5 + 0.5\\right) = (29 \\times 5) + (29 \\times 0.5)\n\\]\n\n1. **Multiply 29 by 5:**\n   \\[\n   29 \\times 5 = 145\n   \\]\n   \n2. **Multiply 29 by 0.5:**\n   \\[\n   29 \\times 0.5 = 14.5\n   \\]\n   \n3. **Add the two results together:**\n   \\[\n   145 + 14.5 = 159.5\n   \\]\n\nSo, the final answer is:\n\n\\[\n\\boxed{159.5}\n\\]",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 38.5514884,
+          "eval_duration": 0.035,
+          "load_duration": 17478200
         }
       ],
       "llama3.1": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from llama3.1 for query: Say 'Hi'. Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:54:42.19661Z' done=True done_reason='stop' total_duration=3438843200 load_duration=2919352400 prompt_eval_count=19 prompt_eval_duration=251000000 eval_count=3 eval_duration=266000000 response='Hi!' context=[128006, 882, 128007, 271, 46864, 364, 13347, 4527, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 13347, 0]"
+          "response": "Hi!",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 4.2573294,
+          "eval_duration": 0.259,
+          "load_duration": 3726841000
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from llama3.1 for query: What is your name? Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:54:45.8079908Z' done=True done_reason='stop' total_duration=3608756900 load_duration=18657100 prompt_eval_count=20 prompt_eval_duration=46000000 eval_count=29 eval_duration=3543000000 response='I don\\'t have a personal name, I\\'m an AI assistant. You can call me Assistant or just \"AI\" if you like!' context=[128006, 882, 128007, 271, 3923, 374, 701, 836, 30, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 40, 1541, 956, 617, 264, 4443, 836, 11, 358, 2846, 459, 15592, 18328, 13, 1472, 649, 1650, 757, 22103, 477, 1120, 330, 15836, 1, 422, 499, 1093, 0]"
+          "response": "I don't have a personal name. I'm an AI designed to assist and provide information.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 2.5073254,
+          "eval_duration": 0.041,
+          "load_duration": 25448200
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from llama3.1 for query: What is 29 * 5.5? Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:54:46.3515139Z' done=True done_reason='stop' total_duration=542134800 load_duration=23063200 prompt_eval_count=25 prompt_eval_duration=44000000 eval_count=4 eval_duration=474000000 response='159.5' context=[128006, 882, 128007, 271, 3923, 374, 220, 1682, 353, 220, 20, 13, 20, 30, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 11068, 13, 20]"
+          "response": "159.5",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 0.5480195,
+          "eval_duration": 0.034,
+          "load_duration": 26036400
         }
       ],
       "mistral": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from mistral for query: Say 'Hi'. Keep your answer short. | model='mistral' created_at='2025-03-17T21:54:49.9778112Z' done=True done_reason='stop' total_duration=3622172600 load_duration=2401659700 prompt_eval_count=14 prompt_eval_duration=242000000 eval_count=10 eval_duration=976000000 response=' Hi! How can I help you today?' context=[3, 29473, 16521, 1232, 24577, 4903, 11107, 1342, 5140, 3253, 29491, 4, 1027, 16127, 29576, 2370, 1309, 1083, 2084, 1136, 3922, 29572]"
+          "response": " Hi! How can I help you today?",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 4.6629367,
+          "eval_duration": 0.243,
+          "load_duration": 3443419400
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from mistral for query: What is your name? Keep your answer short. | model='mistral' created_at='2025-03-17T21:54:50.5438802Z' done=True done_reason='stop' total_duration=563962100 load_duration=7376600 prompt_eval_count=15 prompt_eval_duration=41000000 eval_count=5 eval_duration=513000000 response=' Assistive AI' context=[3, 29473, 2592, 1117, 1342, 1909, 29572, 11107, 1342, 5140, 3253, 29491, 4, 1027, 4116, 1160, 1263, 16875]"
+          "response": " I am BLANK, your helpful assistant.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 1.2021761,
+          "eval_duration": 0.037,
+          "load_duration": 5173100
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from mistral for query: What is 29 * 5.5? Keep your answer short. | model='mistral' created_at='2025-03-17T21:54:53.680079Z' done=True done_reason='stop' total_duration=3134111300 load_duration=6117200 prompt_eval_count=21 prompt_eval_duration=38000000 eval_count=29 eval_duration=3088000000 response='161.5\\n\\n(For future context, this is the product of multiplying 29 by 5.5)' context=[3, 29473, 2592, 1117, 29473, 29518, 29542, 1166, 29473, 29550, 29491, 29550, 29572, 11107, 1342, 5140, 3253, 29491, 4, 1027, 29508, 29552, 29508, 29491, 29550, 781, 781, 29500, 3333, 4205, 3526, 29493, 1224, 1117, 1040, 2861, 1070, 18437, 4857, 29473, 29518, 29542, 1254, 29473, 29550, 29491, 29550, 29499]"
+          "response": "161.5\n\nI'm glad I could help! Let me know if you have any other questions.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 2.8153598,
+          "eval_duration": 0.04,
+          "load_duration": 8070900
         }
       ]
     },
@@ -48,43 +93,88 @@
       "deepseek-r1": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: Say 'Hi'. Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:55:09.1871293Z' done=True done_reason='stop' total_duration=15503614000 load_duration=2879312600 prompt_eval_count=12 prompt_eval_duration=248000000 eval_count=107 eval_duration=12374000000 response='<think>\\nOkay, so I need to say \"Hi\" but keep it really short. Hmm, how can I make sure my response is just the word \"Hi\" without any extra words? Maybe I should think about how to do that. Sometimes when I try to be concise, I end up adding something unintentionally. Let me try typing \"Hi.\" without any periods or capitalization beyond what\\'s needed. Yeah, that seems right. It\\'s just a simple greeting with no extra information or emojis.\\n</think>\\n\\nHi.' context=[151644, 45764, 364, 13048, 4427, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 32313, 11, 773, 358, 1184, 311, 1977, 330, 13048, 1, 714, 2506, 432, 2167, 2805, 13, 88190, 11, 1246, 646, 358, 1281, 2704, 847, 2033, 374, 1101, 279, 3409, 330, 13048, 1, 2041, 894, 4960, 4244, 30, 10696, 358, 1265, 1744, 911, 1246, 311, 653, 429, 13, 17688, 979, 358, 1430, 311, 387, 63594, 11, 358, 835, 705, 7842, 2494, 69476, 745, 13, 6771, 752, 1430, 19496, 330, 13048, 1189, 2041, 894, 18346, 476, 6722, 2022, 7797, 1128, 594, 4362, 13, 21607, 11, 429, 4977, 1290, 13, 1084, 594, 1101, 264, 4285, 42113, 448, 902, 4960, 1995, 476, 99066, 624, 151649, 271, 13048, 13]"
+          "response": "<think>\nOkay, the user wants me to say \"Hi\" and keep it short. They probably need a quick greeting.\n</think>\n\nHi!",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 6.5196536,
+          "eval_duration": 0.248,
+          "load_duration": 2874906500
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: What is your name? Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:55:23.8004096Z' done=True done_reason='stop' total_duration=14610090400 load_duration=17651500 prompt_eval_count=13 prompt_eval_duration=37000000 eval_count=125 eval_duration=14553000000 response='<think>\\nAlright, so the user just asked, \"What is your name?\" and I need to figure out how to respond appropriately.\\n\\nFirst, I should acknowledge their question. They might be curious about what my name is as an AI. Since I don\\'t have a personal name, that\\'s important to clarify.\\n\\nMaybe they\\'re testing me or trying to see if I can handle simple questions. Either way, being honest and concise is key here.\\n\\nI also want to keep the response friendly and open-ended in case they follow up with something else.\\n</think>\\n\\nMy name is DeepSeek-R1-Lite-Preview.' context=[151644, 3838, 374, 697, 829, 30, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 71486, 11, 773, 279, 1196, 1101, 4588, 11, 330, 3838, 374, 697, 829, 7521, 323, 358, 1184, 311, 7071, 700, 1246, 311, 5889, 34901, 382, 5338, 11, 358, 1265, 24645, 862, 3405, 13, 2379, 2578, 387, 22208, 911, 1128, 847, 829, 374, 438, 458, 15235, 13, 8704, 358, 1513, 944, 614, 264, 4345, 829, 11, 429, 594, 2989, 311, 37163, 382, 21390, 807, 2299, 7497, 752, 476, 4460, 311, 1490, 421, 358, 646, 3705, 4285, 4755, 13, 20988, 1616, 11, 1660, 10745, 323, 63594, 374, 1376, 1588, 382, 40, 1083, 1366, 311, 2506, 279, 2033, 11657, 323, 1787, 83075, 304, 1142, 807, 1795, 705, 448, 2494, 770, 624, 151649, 271, 5050, 829, 374, 18183, 39350, 10911, 16, 8125, 632, 12, 24625, 13]"
+          "response": "<think>\nAlright, someone asked me my name. They probably just want to know who I am or maybe curious about my background.\n\nI should keep it simple since they requested a short answer.\n\nI'll respond by stating my name clearly without any extra information.\n</think>\n\nMy name is DeepSeek-R1-Lite-Preview.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 7.7221841,
+          "eval_duration": 0.038,
+          "load_duration": 24062000
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from deepseek-r1 for query: What is 29 * 5.5? Keep your answer short. | model='deepseek-r1' created_at='2025-03-17T21:55:53.7646498Z' done=True done_reason='stop' total_duration=29961153500 load_duration=15763900 prompt_eval_count=19 prompt_eval_duration=34000000 eval_count=256 eval_duration=29910000000 response=\"<think>\\nTo find the product of 29 and 5.5, I can break it down into simpler steps.\\n\\nFirst, I'll calculate 29 multiplied by 5, which equals 145.\\n\\nNext, I'll compute 29 times 0.5, resulting in 14.5.\\n\\nFinally, I'll add these two results together: 145 plus 14.5 gives me the final answer of 159.5.\\n</think>\\n\\nSure! Let's calculate \\\\(29 \\\\times 5.5\\\\) step by step.\\n\\n\\\\[\\n29 \\\\times 5.5 = 29 \\\\times \\\\left(5 + 0.5\\\\right) = (29 \\\\times 5) + (29 \\\\times 0.5)\\n\\\\]\\n\\nCalculate each part separately:\\n\\n1. \\\\(29 \\\\times 5 = 145\\\\)\\n2. \\\\(29 \\\\times 0.5 = 14.5\\\\)\\n\\nNow, add the two results together:\\n\\n\\\\[\\n145 + 14.5 = 159.5\\n\\\\]\\n\\nSo,\\n\\n\\\\[\\n\\\\boxed{159.5}\\n\\\\]\" context=[151644, 3838, 374, 220, 17, 24, 353, 220, 20, 13, 20, 30, 13655, 697, 4226, 2805, 13, 151645, 151648, 198, 1249, 1477, 279, 1985, 315, 220, 17, 24, 323, 220, 20, 13, 20, 11, 358, 646, 1438, 432, 1495, 1119, 34288, 7354, 382, 5338, 11, 358, 3278, 11047, 220, 17, 24, 54916, 553, 220, 20, 11, 892, 16819, 220, 16, 19, 20, 382, 5847, 11, 358, 3278, 12564, 220, 17, 24, 3039, 220, 15, 13, 20, 11, 12942, 304, 220, 16, 19, 13, 20, 382, 23949, 11, 358, 3278, 912, 1493, 1378, 3059, 3786, 25, 220, 16, 19, 20, 5519, 220, 16, 19, 13, 20, 6696, 752, 279, 1590, 4226, 315, 220, 16, 20, 24, 13, 20, 624, 151649, 271, 39814, 0, 6771, 594, 11047, 17767, 17, 24, 1124, 15136, 220, 20, 13, 20, 57758, 3019, 553, 3019, 382, 59, 9640, 17, 24, 1124, 15136, 220, 20, 13, 20, 284, 220, 17, 24, 1124, 15136, 1124, 2359, 7, 20, 488, 220, 15, 13, 20, 59, 1291, 8, 284, 320, 17, 24, 1124, 15136, 220, 20, 8, 488, 320, 17, 24, 1124, 15136, 220, 15, 13, 20, 340, 59, 2533, 47866, 1817, 949, 25156, 1447, 16, 13, 17767, 17, 24, 1124, 15136, 220, 20, 284, 220, 16, 19, 20, 59, 340, 17, 13, 17767, 17, 24, 1124, 15136, 220, 15, 13, 20, 284, 220, 16, 19, 13, 20, 59, 692, 7039, 11, 912, 279, 1378, 3059, 3786, 1447, 59, 9640, 16, 19, 20, 488, 220, 16, 19, 13, 20, 284, 220, 16, 20, 24, 13, 20, 198, 59, 2533, 4416, 3554, 59, 9640, 59, 79075, 90, 16, 20, 24, 13, 20, 532, 59, 60]"
+          "response": "<think>\nI need to calculate the product of 29 and 5.5.\n\nFirst, I'll break down 5.5 into a fraction or an easier form, which is 11/2.\n\nNext, I'll multiply 29 by 11, resulting in 319.\n\nFinally, I'll divide 319 by 2 to get the final answer.\n</think>\n\nTo find \\( 29 \\times 5.5 \\), follow these steps:\n\n1. **Break down the multiplication:**\n   \\[\n   29 \\times 5.5 = 29 \\times \\left(5 + 0.5\\right)\n   \\]\n   \n2. **Multiply separately:**\n   \\[\n   29 \\times 5 = 145\n   \\]\n   \\[\n   29 \\times 0.5 = 14.5\n   \\]\n   \n3. **Add the results together:**\n   \\[\n   145 + 14.5 = 159.5\n   \\]\n\n**Final Answer:** \\(\\boxed{159.5}\\)",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 28.9019591,
+          "eval_duration": 0.033,
+          "load_duration": 16503600
         }
       ],
       "llama3.1": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from llama3.1 for query: Say 'Hi'. Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:55:57.5046703Z' done=True done_reason='stop' total_duration=3734568500 load_duration=3196320500 prompt_eval_count=19 prompt_eval_duration=268000000 eval_count=3 eval_duration=268000000 response='Hi!' context=[128006, 882, 128007, 271, 46864, 364, 13347, 4527, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 13347, 0]"
+          "response": "Hi!",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 3.761342,
+          "eval_duration": 0.288,
+          "load_duration": 3201826900
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from llama3.1 for query: What is your name? Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:55:59.4052857Z' done=True done_reason='stop' total_duration=1899066700 load_duration=22833900 prompt_eval_count=20 prompt_eval_duration=40000000 eval_count=15 eval_duration=1833000000 response=\"I don't have a personal name, I'm an AI assistant.\" context=[128006, 882, 128007, 271, 3923, 374, 701, 836, 30, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 40, 1541, 956, 617, 264, 4443, 836, 11, 358, 2846, 459, 15592, 18328, 13]"
+          "response": "I don't have a personal name, I'm an AI assistant.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 1.8957312,
+          "eval_duration": 0.044,
+          "load_duration": 19779300
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from llama3.1 for query: What is 29 * 5.5? Keep your answer short. | model='llama3.1' created_at='2025-03-17T21:55:59.7065085Z' done=True done_reason='stop' total_duration=298492600 load_duration=20213700 prompt_eval_count=25 prompt_eval_duration=37000000 eval_count=2 eval_duration=240000000 response='159' context=[128006, 882, 128007, 271, 3923, 374, 220, 1682, 353, 220, 20, 13, 20, 30, 13969, 701, 4320, 2875, 13, 128009, 128006, 78191, 128007, 271, 11068]"
+          "response": "158.5",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 0.5481094,
+          "eval_duration": 0.041,
+          "load_duration": 26535000
         }
       ],
       "mistral": [
         {
           "query": "Say 'Hi'. Keep your answer short.",
-          "response": "Response from mistral for query: Say 'Hi'. Keep your answer short. | model='mistral' created_at='2025-03-17T21:56:03.3580257Z' done=True done_reason='stop' total_duration=3649930900 load_duration=2421598000 prompt_eval_count=14 prompt_eval_duration=245000000 eval_count=10 eval_duration=980000000 response=' Hi! How can I help you today?' context=[3, 29473, 16521, 1232, 24577, 4903, 11107, 1342, 5140, 3253, 29491, 4, 1027, 16127, 29576, 2370, 1309, 1083, 2084, 1136, 3922, 29572]"
+          "response": " Hi there! How can I help you today?",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 3.7754997,
+          "eval_duration": 0.262,
+          "load_duration": 2427342800
         },
         {
           "query": "What is your name? Keep your answer short.",
-          "response": "Response from mistral for query: What is your name? Keep your answer short. | model='mistral' created_at='2025-03-17T21:56:04.5658295Z' done=True done_reason='stop' total_duration=1205444900 load_duration=6025300 prompt_eval_count=15 prompt_eval_duration=36000000 eval_count=11 eval_duration=1161000000 response=' Assistant. How can I assist you today?' context=[3, 29473, 2592, 1117, 1342, 1909, 29572, 11107, 1342, 5140, 3253, 29491, 4, 1027, 22399, 29491, 2370, 1309, 1083, 6799, 1136, 3922, 29572]"
+          "response": " Assistant",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 0.2452985,
+          "eval_duration": 0.033,
+          "load_duration": 8013500
         },
         {
           "query": "What is 29 * 5.5? Keep your answer short.",
-          "response": "Response from mistral for query: What is 29 * 5.5? Keep your answer short. | model='mistral' created_at='2025-03-17T21:56:08.6740228Z' done=True done_reason='stop' total_duration=4105710300 load_duration=7047100 prompt_eval_count=21 prompt_eval_duration=39000000 eval_count=38 eval_duration=4057000000 response='161.5\\n\\nOr, if you prefer words: Fifty-nine times two, and add five. The result is one hundred sixty-one point five.' context=[3, 29473, 2592, 1117, 29473, 29518, 29542, 1166, 29473, 29550, 29491, 29550, 29572, 11107, 1342, 5140, 3253, 29491, 4, 1027, 29508, 29552, 29508, 29491, 29550, 781, 781, 2996, 29493, 1281, 1136, 6041, 3853, 29515, 17064, 1652, 29501, 29479, 1241, 3189, 1757, 29493, 1072, 1735, 4127, 29491, 1183, 1972, 1117, 1392, 5450, 21507, 29501, 1306, 2073, 4127, 29491]"
+          "response": "161.5\n\nThis is a simple multiplication problem, with the number 29 as the multiplicand and 5.5 as the multiplier. The result of this operation is 161.5.",
+          "done": true,
+          "done_reason": "stop",
+          "duration": 5.4027775,
+          "eval_duration": 0.031,
+          "load_duration": 12159500
         }
       ]
     }

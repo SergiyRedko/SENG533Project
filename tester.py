@@ -6,6 +6,8 @@ import os
 import random
 import ollama
 
+from formatted_reply import FormattedReply
+
 def read_jsons():
     """
     Reads the configurable contents of .jsons.
@@ -34,7 +36,7 @@ def send_query_to_model(client, model, query):
     Replace this with your actual interaction code if needed.
     """
     response = client.generate(model=model, prompt=query)
-    return f"Response from {model} for query: {query} | {response}"
+    return response
 
 def progress_message(completed_queries, total_queries, query_number, model, iteration):
     """
@@ -96,9 +98,15 @@ def main():
             for query_number, query in enumerate(queries, start=1):
                 progress_message(completed_queries, total_queries, query_number, model, iteration)
                 response = send_query_to_model(client, model, query)
+                formatted_reply = FormattedReply.decompose_ollama_reply(response)
                 model_results.append({
                     "query": query,
-                    "response": response
+                    "response": formatted_reply.response,
+                    "done" : formatted_reply.done,
+                    "done_reason" : formatted_reply.done_reason,
+                    "duration" : formatted_reply.duration,
+                    "eval_duration": formatted_reply.eval_duration,
+                    "load_duration" : formatted_reply.load_duration
                 })
                 completed_queries += 1
             results[str(iteration)][model] = model_results
