@@ -1,0 +1,7 @@
+{
+    "models": [
+      "deepseek-r1",
+      "llama3.1",
+      "mistral"
+    ]
+  }

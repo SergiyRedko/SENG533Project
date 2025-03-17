@@ -1,15 +1,15 @@
 # SENG533Project
 
-This is the repository for SENG 533 group project.
+This is the repository for SENG 533 group project. In this project we evaluate and compare performance of locally hosted LLMs.
 
 We are group **#45** and our members:
 
-| Name                | Student ID | GitHub Tag           |
-|---------------------|-----------|-----------------------|
-| Sergiy Redko        | 30151178  | Sergiy Redko|
-| Caroline Basta      | 30057042  | CarolineBasta        |
-| Romanard Tiratira   | 30142708  | r-tiratira     |
-| Sukriti Sharma      | 30115530  |         |
+| Name                | Student ID | GitHub Tag    |
+|---------------------|------------|---------------|
+| Sergiy Redko        | 30151178   | Sergiy Redko  |
+| Caroline Basta      | 30057042   | CarolineBasta |
+| Romanard Tiratira   | 30142708   | r-tiratira    |
+| Sukriti Sharma      | 30115530   | suxxmjz       |
 
 All instructions listed in this README are for Windows systems. Alternative instructions for UNIX based systems are easy to find online.
 
@@ -22,6 +22,8 @@ All instructions listed in this README are for Windows systems. Alternative inst
 This project is open-source under MIT license. Copy is [here](./LICENSE).
 
 ## Installation Instructions
+
+### Ollama
 
 Download and install [Ollama](https://ollama.com/).
 
@@ -64,9 +66,26 @@ The Frenchman sipped his wine, the Brit took a swig of ale, the Italian drank hi
 C:\Users\sergi>
 ```
 
+### Python
+
+First, you should start the virtual environment: `.\venv\Scripts\activate.bat`
+
+Now, install all required python modules: `pip install -r requirements.txt`
+
 ## Run and Replicate Our Tests
 
-> WRITE THIS UP!!!
+Run our tests with `python tester.py`.
+
+While the test is running you will see something like this:
+```cmd
+(venv) C:\Users\sergi\Documents\GitHub\SENG533Project>python tester.py --max-queries 3 --test-iterations 2
+|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■------|
+Percent complete:       94%
+Test iteration:           2
+Testing model:      mistral
+Testing query:            3
+```
+We implemented this progress bar and status display as testing process takes quite a while. Without a status bar it is difficult to tell if the test is still running, or if the whole thing got hung up.
 
 ## Some Useful Links
 

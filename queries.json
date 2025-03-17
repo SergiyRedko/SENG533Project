@@ -1,0 +1,16 @@
+{
+    "queries": [
+      "Say 'Hi'. Keep your answer short.",
+      "What is your name? Keep your answer short.",
+      "What is 29 * 5.5? Keep your answer short.",
+      "How do I make a cup of tea?",
+      "What is the capital of Italy?",
+      "Explain how a car engine works.",
+      "Write a simple Python function to add two numbers.",
+      "How do neural networks learn?",
+      "What are the benefits of renewable energy?",
+      "Summarize the plot of 'To Kill a Mockingbird'.",
+      "Discuss the impact of globalization on emerging markets.",
+      "Analyze the ethical implications of artificial intelligence in modern society."
+    ]
+  }
