@@ -64,3 +64,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Specific files
+performance_results.json
