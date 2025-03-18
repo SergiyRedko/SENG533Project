@@ -87,6 +87,8 @@ Testing query:            3
 ```
 We implemented this progress bar and status display as testing process takes quite a while. Without a status bar it is difficult to tell if the test is still running, or if the whole thing got hung up.
 
+Second step is to run the analyzer with `python analyzer.py`.
+
 ## Some Useful Links
 
 There is an informative and concise tutorial on how to use Ollama [here](https://www.youtube.com/watch?v=UtSSMs6ObqY).

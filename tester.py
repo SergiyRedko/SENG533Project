@@ -201,7 +201,7 @@ def main():
     with open("performance_results.json", "w") as outfile:
         json.dump({"results": results}, outfile, indent=2)
     
-    print("Done!")
+    print("Test complete!")
 
 if __name__ == '__main__':
     main()
