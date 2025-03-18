@@ -2,3 +2,4 @@ requests
 ollama
 simplejson
 psutil
+prettytable
