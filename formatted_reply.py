@@ -39,6 +39,6 @@ class FormattedReply:
         instance.duration = reply.total_duration / 1000000000
         instance.eval_duration = reply.prompt_eval_duration / 1000000000
         instance.response = reply.response
-        instance.load_duration = reply.load_duration
+        instance.load_duration = reply.load_duration / 1000000000
 
         return instance

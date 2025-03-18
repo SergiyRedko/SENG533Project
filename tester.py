@@ -35,7 +35,7 @@ def send_query_to_model(client, model, query):
     Sends a query to a model using the ollama client.
     Replace this with your actual interaction code if needed.
     """
-    response = client.generate(model=model, prompt=query)
+    response = client.generate(model=model, prompt=query, keep_alive=10)
     return response
 
 def progress_message(completed_queries, total_queries, query_number, model, iteration):
