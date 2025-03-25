@@ -15,7 +15,13 @@ All instructions listed in this README are for Windows systems. Alternative inst
 
 ## Table of Contents
 
-> GENERATE THIS!!!
+- [SENG533Project](#seng533project)
+- [License](#license)
+- [Installation Instructions](#installation-instructions)
+  - [Ollama](#ollama)
+  - [Python](#python)
+- [Run and Replicate Our Tests](#run-and-replicate-our-tests)
+- [Some Useful Links](#some-useful-links)
 
 ## License
 
@@ -76,18 +82,27 @@ Now, install all required python modules: `pip install -r requirements.txt`
 
 Run our tests with `python tester.py`.
 
+This script comes with 2 arguments:
+- `--max-queries` if you do not want to run all the queries.
+- `--test-iterations` if you want to run multiple iterations of this test to normalize error.
+
+This script will ask you for your initial. **DO NOT FORGET TO ENTER IT**!
+
 While the test is running you will see something like this:
 ```cmd
-(venv) C:\Users\sergi\Documents\GitHub\SENG533Project>python tester.py --max-queries 3 --test-iterations 2
-|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■------|
-Percent complete:       94%
-Test iteration:           2
-Testing model:      mistral
-Testing query:            3
+(venv) C:\Users\sergi\Documents\GitHub\SENG533Project>python tester.py  
+Please enter your initials: SR
+|■■■■■-----------------------------------------------------------------------------------------------|
+    Percent complete:        5%
+    Test iteration:           1
+    Testing model:  deepseek-r1
+    Testing query:            9
 ```
 We implemented this progress bar and status display as testing process takes quite a while. Without a status bar it is difficult to tell if the test is still running, or if the whole thing got hung up.
 
-Second step is to run the analyzer with `python analyzer.py`.
+You may notice that after running this script `./Results/performance_results_{user_initial}.json` was generated. This file contains all intermediate data we will need.
+
+Second step is to run the analyzer with `python analyzer.py`. Please make sure that `performance_results_XX.json` are in `Results` folder. After running this script, statistics will be printed to the terminal.
 
 ## Some Useful Links
 
