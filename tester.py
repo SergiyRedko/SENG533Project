@@ -112,6 +112,9 @@ def progress_message(completed_queries, total_queries, query_number, model, iter
     print(progress_msg)
 
 def main():
+    # Prompt the user for their initials.
+    user_initial = input("Please enter your initials: ")
+
     # Parse arguments.
     parser = argparse.ArgumentParser(description="Test performance of local LLMs")
     parser.add_argument(
@@ -197,8 +200,10 @@ def main():
     progress_message(total_queries, total_queries, "----", "----", "----")
     print("Test complete!")
 
-    print("Dumping the stats...")
-    with open("performance_results.json", "w") as outfile:
+    # Build the output filename with user initials.
+    output_filename = f"./Results/performance_results_{user_initial}.json"
+    print(f"Dumping the stats to {output_filename} ...")
+    with open(output_filename, "w") as outfile:
         json.dump({"results": results}, outfile, indent=2)
     
     print("Test complete!")

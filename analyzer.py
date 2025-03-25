@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
-
 import json
 import statistics
+import glob
+import os
 from prettytable import PrettyTable
 
-def load_results(file_path="performance_results.json"):
+def load_results(file_path):
     """
     Load the performance results from a JSON file.
     """
@@ -32,14 +32,22 @@ def group_by_model(results):
             grouped[model].extend(records)
     return grouped
 
-def compute_stats(records):
+def compute_stats(records, baseline):
     """
     Compute mean, median, and standard deviation for numeric parameters, and failure rate.
+    For avg_cpu, avg_mem, and avg_gpu, subtract the corresponding baseline values.
     """
     metrics = ["duration", "eval_duration", "load_duration", "avg_cpu", "avg_mem", "avg_gpu"]
     stats = {}
     for metric in metrics:
-        values = [record.get(metric, 0) for record in records if metric in record]
+        if metric in ["avg_cpu", "avg_mem", "avg_gpu"]:
+            # Map metric to the corresponding baseline key.
+            baseline_key = "cpu" if metric == "avg_cpu" else "mem" if metric == "avg_mem" else "gpu"
+            baseline_val = baseline.get(baseline_key, 0)
+            values = [record.get(metric, 0) - baseline_val for record in records if metric in record]
+        else:
+            values = [record.get(metric, 0) for record in records if metric in record]
+            
         if values:
             mean_val = statistics.mean(values)
             median_val = statistics.median(values)
@@ -48,7 +56,7 @@ def compute_stats(records):
             mean_val = median_val = std_val = 0
         stats[metric] = {"mean": mean_val, "median": median_val, "std": std_val}
     
-    # Compute failure rate: record where `done` is False.
+    # Compute failure rate: count records where `done` is False.
     total = len(records)
     failures = sum(1 for record in records if not record.get("done", True))
     failure_rate = (failures / total) * 100 if total > 0 else 0
@@ -63,11 +71,10 @@ def display_stats_transposed(grouped_stats):
     """
     models = list(grouped_stats.keys())
     
-    # Prepare rows: first two rows for count and failure rate,
-    # then three rows per metric: mean, median, and std.
+    # Prepare rows: first rows for count and failure rate,
+    # then rows for each metric: mean, median, and std.
     stat_rows = {}
     
-    # Count and Failure Rate rows:
     stat_rows["Count"] = {model: grouped_stats[model]["count"] for model in models}
     stat_rows["Failure Rate (%)"] = {model: f"{grouped_stats[model]['failure_rate']:.2f}" for model in models}
     
@@ -88,20 +95,38 @@ def display_stats_transposed(grouped_stats):
     print(table)
 
 def main():
-    results = load_results("performance_results.json")
-    if not results:
-        print("No results found.")
+    # Look for all performance_results_XX.json files in /Results
+    json_files = glob.glob(os.path.join("Results", "performance_results_*.json"))
+    
+    if not json_files:
+        print("No matching performance result files found in /Results.")
         return
     
-    grouped = group_by_model(results)
-    
-    # Calculate stats for each model.
-    grouped_stats = {}
-    for model, records in grouped.items():
-        grouped_stats[model] = compute_stats(records)
-    
-    # Display the results in a transposed table.
-    display_stats_transposed(grouped_stats)
+    # Process each file separately
+    for file_path in json_files:
+        # Extract initials from filename.
+        filename = os.path.basename(file_path)
+        prefix, _ = os.path.splitext(filename)
+        user_initials = prefix.replace("performance_results_", "")
+        
+        print(f"\n{"-"*14} Results for user initials: {user_initials} {"-"*14}")
+        results = load_results(file_path)
+        
+        if not results:
+            print("No results found in this file.")
+            continue
+        
+        # Retrieve baseline values.
+        baseline = results.get("baseline", {"cpu": 0, "mem": 0, "gpu": 0})
+        grouped = group_by_model(results)
+        
+        # Calculate stats for each model, discounting the baseline.
+        grouped_stats = {}
+        for model, records in grouped.items():
+            grouped_stats[model] = compute_stats(records, baseline)
+        
+        # Display the results in a transposed table.
+        display_stats_transposed(grouped_stats)
 
 if __name__ == "__main__":
     main()
