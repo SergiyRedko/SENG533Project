@@ -15,7 +15,13 @@ All instructions listed in this README are for Windows systems. Alternative inst
 
 ## Table of Contents
 
-> GENERATE THIS!!!
+- [SENG533Project](#seng533project)
+- [License](#license)
+- [Installation Instructions](#installation-instructions)
+  - [Ollama](#ollama)
+  - [Python](#python)
+- [Run and Replicate Our Tests](#run-and-replicate-our-tests)
+- [Some Useful Links](#some-useful-links)
 
 ## License
 
