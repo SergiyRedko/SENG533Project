@@ -64,6 +64,3 @@ Thumbs.db
 # Logs
 *.log
 
-# Ignore everything in /Results folder except the folder itself
-/Results/*
-!/Results/.gitkeep
