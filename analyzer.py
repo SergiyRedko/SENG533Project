@@ -109,7 +109,7 @@ def main():
         prefix, _ = os.path.splitext(filename)
         user_initials = prefix.replace("performance_results_", "")
         
-        print(f"\n{"-"*14} Results for user initials: {user_initials} {"-"*14}")
+        print(f"\n{'-'*14} Results for user initials: {user_initials} {'-'*14}")
         results = load_results(file_path)
         
         if not results:
