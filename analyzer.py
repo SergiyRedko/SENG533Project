@@ -3,6 +3,7 @@ import statistics
 import glob
 import os
 from prettytable import PrettyTable
+import math
 
 def load_results(file_path):
     """
@@ -66,29 +67,40 @@ def group_by_model(results):
 
 def compute_stats(records, baseline):
     """
-    Compute mean, median, and standard deviation for numeric parameters, and failure rate.
-    No baseline adjustment is applied.
+    Compute mean, median, std, and 95% confidence interval (CI) for each metric.
     """
     metrics = ["duration", "eval_duration", "load_duration", "avg_cpu", "avg_mem", "avg_gpu"]
     stats = {}
-    for metric in metrics:
-        # Use raw recorded values (no baseline adjustment)
-        values = [record.get(metric, 0) for record in records if metric in record]
+    n = len(records)
 
+    for metric in metrics:
+        values = [record.get(metric, 0) for record in records if metric in record]
         if values:
             mean_val = statistics.mean(values)
             median_val = statistics.median(values)
             std_val = statistics.stdev(values) if len(values) > 1 else 0
+
+            # 95% confidence interval (Z = 1.96)
+            ci = 1.96 * (std_val / math.sqrt(n)) if n > 1 else 0
+            ci_lower = mean_val - ci
+            ci_upper = mean_val + ci
+            ci_str = f"[{ci_lower:.2f}, {ci_upper:.2f}]"
         else:
             mean_val = median_val = std_val = 0
-        stats[metric] = {"mean": mean_val, "median": median_val, "std": std_val}
+            ci_str = "[0, 0]"
 
-    # Compute failure rate: count records where `done` is False.
-    total = len(records)
+        stats[metric] = {
+            "mean": mean_val,
+            "median": median_val,
+            "std": std_val,
+            "ci": ci_str
+        }
+
+    # Failure rate
     failures = sum(1 for record in records if not record.get("done", True))
-    failure_rate = (failures / total) * 100 if total > 0 else 0
+    failure_rate = (failures / n) * 100 if n > 0 else 0
     stats["failure_rate"] = failure_rate
-    stats["count"] = total
+    stats["count"] = n
     return stats
 
 def display_stats_transposed(grouped_stats):
@@ -110,7 +122,8 @@ def display_stats_transposed(grouped_stats):
         stat_rows[f"{metric} mean"] = {model: f"{grouped_stats[model][metric]['mean']:.2f}" for model in models}
         stat_rows[f"{metric} median"] = {model: f"{grouped_stats[model][metric]['median']:.2f}" for model in models}
         stat_rows[f"{metric} std"] = {model: f"{grouped_stats[model][metric]['std']:.2f}" for model in models}
-    
+        stat_rows[f"{metric} 95% CI"] = {model: f"{grouped_stats[model][metric]['ci']}" for model in models}
+
     headers = ["Statistic"] + models
     table = PrettyTable()
     table.field_names = headers
