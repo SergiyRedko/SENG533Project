@@ -67,7 +67,7 @@ def group_by_model(results):
 
 def compute_stats(records, baseline):
     """
-    Compute mean, median, std, and 95% confidence interval (CI) for each metric.
+    Compute mean, median, std, and 95% confidence interval (CI) for each metric. Compute throughput.
     """
     metrics = ["duration", "eval_duration", "load_duration", "avg_cpu", "avg_mem", "avg_gpu"]
     stats = {}
@@ -101,6 +101,13 @@ def compute_stats(records, baseline):
     failure_rate = (failures / n) * 100 if n > 0 else 0
     stats["failure_rate"] = failure_rate
     stats["count"] = n
+    duration_mean = statistics.mean([record.get("duration", 0) for record in records if "duration" in record]) if n > 0 else 0
+    if duration_mean > 0:
+        throughput = n / duration_mean  # Tasks per second
+    else:
+        throughput = 0
+
+    stats["throughput"] = throughput
     return stats
 
 def display_stats_transposed(grouped_stats):
@@ -123,6 +130,8 @@ def display_stats_transposed(grouped_stats):
         stat_rows[f"{metric} median"] = {model: f"{grouped_stats[model][metric]['median']:.2f}" for model in models}
         stat_rows[f"{metric} std"] = {model: f"{grouped_stats[model][metric]['std']:.2f}" for model in models}
         stat_rows[f"{metric} 95% CI"] = {model: f"{grouped_stats[model][metric]['ci']}" for model in models}
+
+    stat_rows["Throughput (tasks/sec)"] = {model: f"{grouped_stats[model]['throughput']:.2f}" for model in models}
 
     headers = ["Statistic"] + models
     table = PrettyTable()
