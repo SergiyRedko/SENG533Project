@@ -32,22 +32,49 @@ def group_by_model(results):
             grouped[model].extend(records)
     return grouped
 
+# def compute_stats(records, baseline):
+#     """
+#     Compute mean, median, and standard deviation for numeric parameters, and failure rate.
+#     For avg_cpu, avg_mem, and avg_gpu, subtract the corresponding baseline values.
+#     """
+#     metrics = ["duration", "eval_duration", "load_duration", "avg_cpu", "avg_mem", "avg_gpu"]
+#     stats = {}
+#     for metric in metrics:
+#         if metric in ["avg_cpu", "avg_mem", "avg_gpu"]:
+#             # Map metric to the corresponding baseline key.
+#             baseline_key = "cpu" if metric == "avg_cpu" else "mem" if metric == "avg_mem" else "gpu"
+#             baseline_val = baseline.get(baseline_key, 0)
+#             values = [record.get(metric, 0) - baseline_val for record in records if metric in record]
+#         else:
+#             values = [record.get(metric, 0) for record in records if metric in record]
+            
+#         if values:
+#             mean_val = statistics.mean(values)
+#             median_val = statistics.median(values)
+#             std_val = statistics.stdev(values) if len(values) > 1 else 0
+#         else:
+#             mean_val = median_val = std_val = 0
+#         stats[metric] = {"mean": mean_val, "median": median_val, "std": std_val}
+    
+#     # Compute failure rate: count records where `done` is False.
+#     total = len(records)
+#     failures = sum(1 for record in records if not record.get("done", True))
+#     failure_rate = (failures / total) * 100 if total > 0 else 0
+#     stats["failure_rate"] = failure_rate
+#     stats["count"] = total
+#     return stats
+
 def compute_stats(records, baseline):
     """
     Compute mean, median, and standard deviation for numeric parameters, and failure rate.
-    For avg_cpu, avg_mem, and avg_gpu, subtract the corresponding baseline values.
+    No baseline adjustment is applied.
     """
     metrics = ["duration", "eval_duration", "load_duration", "avg_cpu", "avg_mem", "avg_gpu"]
     stats = {}
     for metric in metrics:
-        if metric in ["avg_cpu", "avg_mem", "avg_gpu"]:
-            # Map metric to the corresponding baseline key.
-            baseline_key = "cpu" if metric == "avg_cpu" else "mem" if metric == "avg_mem" else "gpu"
-            baseline_val = baseline.get(baseline_key, 0)
-            values = [record.get(metric, 0) - baseline_val for record in records if metric in record]
-        else:
-            values = [record.get(metric, 0) for record in records if metric in record]
-            
+        # Use raw recorded values (no baseline adjustment)
+        values = [record.get(metric, 0) for record in records if metric in record]
+
         if values:
             mean_val = statistics.mean(values)
             median_val = statistics.median(values)
@@ -55,7 +82,7 @@ def compute_stats(records, baseline):
         else:
             mean_val = median_val = std_val = 0
         stats[metric] = {"mean": mean_val, "median": median_val, "std": std_val}
-    
+
     # Compute failure rate: count records where `done` is False.
     total = len(records)
     failures = sum(1 for record in records if not record.get("done", True))
