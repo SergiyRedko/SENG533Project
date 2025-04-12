@@ -1,6 +1,6 @@
 # SENG533Project
 
-This is the repository for SENG 533 group project. In this project we evaluate and compare performance of locally hosted LLMs.
+This is the repository for SENG 533 group project. In this project, we evaluate and compare the performance of locally hosted LLMs. Our two main questions were what the average response time and the throughput of the system are.
 
 We are group **#45** and our members:
 
@@ -35,9 +35,9 @@ Download and install [Ollama](https://ollama.com/).
 
 Launch Ollama app.
 
-> NOTE: Ollama app does not have a UI. It will be visible in system tray though.
+> NOTE: Ollama app does not have a UI. It will be visible in the system tray, though.
 
-Open CMD (or other terminal) and install following models:
+Open CMD (or other terminal) and install the following models:
 - DeepSeek-R1 (`ollama pull deepseek-r1`)
 - Llama 3.1 (`ollama pull llama3.1`)
 - Mistral (`ollama pull mistral`)
@@ -51,7 +51,7 @@ llama3.1:latest       46e0c10c039e    4.9 GB    11 minutes ago
 deepseek-r1:latest    0a8c26691023    4.7 GB    18 minutes ago
 ```
 
-Now you can run our tests, or the installed models from terminal with `ollama run <model name>` and `/bye` to terminate a session with a specific model:
+Now you can run our tests, or the installed models from the terminal with `ollama run <model name>` and `/bye` to terminate a session with a specific model:
 ```cmd
 C:\Users\sergi>ollama run mistral
 >>> Tell me a joke about a frenchmen, a brit, and an italian in a bar.
@@ -76,7 +76,7 @@ C:\Users\sergi>
 
 First, you should start the virtual environment: `.\venv\Scripts\activate.bat`
 
-Now, install all required python modules: `pip install -r requirements.txt`
+Now, install all required Python modules: `pip install -r requirements.txt`
 
 ## Run and Replicate Our Tests
 
@@ -84,11 +84,11 @@ Run our tests with `python tester.py`.
 
 This script comes with 2 arguments:
 - `--max-queries` if you do not want to run all the queries.
-- `--test-iterations` if you want to run multiple iterations of this test to normalize error.
+- `--test-iterations` if you want to run multiple iterations of this test to normalize the error.
 
 This script will ask you for your initial. **DO NOT FORGET TO ENTER IT**!
 
-While the test is running you will see something like this:
+While the test is running, you will see something like this:
 ```cmd
 (venv) C:\Users\sergi\Documents\GitHub\SENG533Project>python tester.py  
 Please enter your initials: SR
@@ -100,9 +100,9 @@ Please enter your initials: SR
 ```
 We implemented this progress bar and status display as testing process takes quite a while. Without a status bar it is difficult to tell if the test is still running, or if the whole thing got hung up.
 
-You may notice that after running this script `./Results/performance_results_{user_initial}.json` was generated. This file contains all intermediate data we will need.
+You may notice that after running this script, `./Results/performance_results_{user_initial}.json` was generated. This file contains all the intermediate data we will need.
 
-Second step is to run the analyzer with `python analyzer.py`. Please make sure that `performance_results_XX.json` are in `Results` folder. After running this script, statistics will be printed to the terminal.
+The second step is to run the analyzer with `python analyzer.py`. Please make sure that `performance_results_XX.json` files are in the `Results` folder. After running this script, the statistics for each model will be printed to the terminal. 
 
 ## Some Useful Links
 
